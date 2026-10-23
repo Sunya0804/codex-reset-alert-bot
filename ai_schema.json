@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "relevant": {"type": "boolean"},
+    "status": {"type": "string", "enum": ["scheduled", "changed", "completed", "cancelled", "uncertain", "unrelated"]},
+    "interpretation": {"type": "string"},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+    "time_kind": {"type": "string", "enum": ["unknown", "relative", "explicit"]},
+    "time_expression": {"type": "string"},
+    "time_source_post_id": {"type": ["string", "null"]},
+    "relative_minutes": {"type": ["integer", "null"]},
+    "scheduled_at": {"type": ["string", "null"]},
+    "uncertainty": {"type": "string"},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {"post_id": {"type": "string"}, "quote": {"type": "string"}},
+        "required": ["post_id", "quote"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["relevant", "status", "interpretation", "confidence", "time_kind", "time_expression", "time_source_post_id", "relative_minutes", "scheduled_at", "uncertainty", "evidence"],
+  "additionalProperties": false
+}

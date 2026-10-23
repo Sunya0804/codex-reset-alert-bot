@@ -1,0 +1,4 @@
+requests>=2.32.3,<3
+python-dotenv>=1.0.1,<2
+tzdata>=2024.1
+beautifulsoup4>=4.12.3,<5
